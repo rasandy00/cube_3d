@@ -1,4 +1,4 @@
-NAME    = cub3D
+NAME    = cube3D
 CC      = cc
 CFLAGS  = -Wall -Wextra -Werror -Iincludes
 
@@ -10,7 +10,7 @@ MLX_FLAGS = -L$(MLX_PATH) -lmlx -L/usr/lib -lXext -lX11 -lm -lz
 
 SRC     = src/main.c \
 		  src/get_next_line.c \
-		  src/ft_pasing.c \
+		  src/ft_parsing.c \
 
 OBJ     = $(SRC:.c=.o)
 

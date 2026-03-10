@@ -6,7 +6,7 @@
 /*   By: andriamr <andriamr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 13:47:55 by andriamr          #+#    #+#             */
-/*   Updated: 2025/03/19 13:38:29 by andriamr         ###   ########.fr       */
+/*   Updated: 2026/02/20 16:18:35 by andriamr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,3 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 		i++;
 	return (s1[i] - s2[i]);
 }
-/*
-int main ()
-{
-	const char *s1;
-	const char *s2;
-
-	s1 = "sandy ";
-	s2 = "sandy satra";
-	printf("%d\n", ft_strncmp(s1,s2, 4));
-	return (0);
-}*/

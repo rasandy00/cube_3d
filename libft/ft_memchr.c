@@ -6,7 +6,7 @@
 /*   By: andriamr <andriamr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 14:15:14 by andriamr          #+#    #+#             */
-/*   Updated: 2025/03/19 10:25:35 by andriamr         ###   ########.fr       */
+/*   Updated: 2026/02/20 16:17:41 by andriamr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,4 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (NULL);
 }
-/*
-int main ()
-{
-	char *s1;
-	s1 = "sandy kely mlay be 0123456789";
-	printf("%s\n", ft_memchr(s1, 'm', 20));
-	return (0);
-}*/
+

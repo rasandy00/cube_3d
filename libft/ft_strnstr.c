@@ -6,7 +6,7 @@
 /*   By: andriamr <andriamr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 14:53:34 by andriamr          #+#    #+#             */
-/*   Updated: 2025/03/19 14:47:59 by andriamr         ###   ########.fr       */
+/*   Updated: 2026/02/20 16:18:39 by andriamr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,16 +31,3 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	}
 	return (NULL);
 }
-/*
-#include <stdio.h>
-#include <string.h>
-int main ()
-{
-	char	*big;
-	char	*little;
-	big = "sandy kely milay be lotra";
-	little = "kely";
-	printf("my :%s\n", ft_strnstr(big, little, 1));
-	printf("pc :%s\n", ft_strnstr(big, little, 1));
-	return (0);
-}*/

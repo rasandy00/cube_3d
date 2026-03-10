@@ -6,7 +6,7 @@
 /*   By: andriamr <andriamr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 14:54:37 by andriamr          #+#    #+#             */
-/*   Updated: 2025/03/13 18:16:44 by andriamr         ###   ########.fr       */
+/*   Updated: 2026/02/20 16:17:37 by andriamr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,4 @@ int	ft_isprint(int c)
 {
 	return ((c <= 126) && (c >= 32));
 }
-/*
-int main ()
-{
-	printf ("%d",ft_isprint(48) );
-	return (0);
-}*/
+

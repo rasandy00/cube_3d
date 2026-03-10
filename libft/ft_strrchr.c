@@ -6,7 +6,7 @@
 /*   By: andriamr <andriamr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 13:16:42 by andriamr          #+#    #+#             */
-/*   Updated: 2025/03/19 13:55:29 by andriamr         ###   ########.fr       */
+/*   Updated: 2026/02/20 16:18:44 by andriamr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,16 +31,3 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	return (NULL);
 }
-/*
-#include <stdio.h>
-#include <string.h>
-int  main ()
-{
-	const char *str;
-	str = "sandy kely mlay be";
-	printf("chaine : %s\n",str);
-	printf("result original: %s\n",strrchr(str, 'y'));
-	printf("result : %s\n",ft_strrchr(str, 'y'));
-	printf("result original: %s\n",strrchr(str, 'y'));
-	return (0);
-}*/

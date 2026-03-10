@@ -6,7 +6,7 @@
 /*   By: andriamr <andriamr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 15:53:24 by andriamr          #+#    #+#             */
-/*   Updated: 2025/04/06 11:01:51 by andriamr         ###   ########.fr       */
+/*   Updated: 2026/02/20 16:18:02 by andriamr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,19 +60,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	str[i] = '\0';
 	return (str);
 }
-/*
-#include <stdio.h>
-int main()
-{
-	char a[10];
-	char *b;
-	char *c;
-
-	a ="xycertfghfg";
-	b = "ertfdglkdjfgklfgd";
-	str = ""
-	c = ft_strjoin(a,b);
-	printf("%s", c);
-	free(c);
-	return (0);
-}*/

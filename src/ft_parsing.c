@@ -6,7 +6,7 @@
 /*   By: andriamr <andriamr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/19 09:43:40 by codespace         #+#    #+#             */
-/*   Updated: 2026/02/20 08:51:07 by andriamr         ###   ########.fr       */
+/*   Updated: 2026/02/23 10:25:19 by andriamr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,21 @@ t_list    *ft_lstnew(char *line)
         return (NULL);
     new->line = line;
     new->next = NULL;
+    new->prev = NULL;
+    return (new);
+}
+
+t_list *ft_add_top(t_list *lst, char *line)
+{
+    t_list  *new;
+
+    new = ft_lstnew(line);
+    if (!new)
+        return (NULL);
+    if (!lst)
+        return (new);
+    lst->prev = new;
+    new->next = lst;
     return (new);
 }
 
@@ -38,6 +53,7 @@ t_list  *ft_add_back(t_list *lst, char *line)
     while (temp->next)
         temp = temp->next;
     temp->next = new;
+    new->prev = temp;
     return (lst);
 }
 
@@ -119,32 +135,59 @@ int ft_skip_space(char *str)
         i++;
     return (i);
 }
-    
+
+int ft_start_with(char *str, char *prefix)
+{
+    int i;
+
+    i = 0;
+    while (ft_is_space(str[i]))
+        i++;    
+    if (ft_strncmp(&str[i], prefix, ft_strlen(prefix)) == 0)
+        return (0);
+    return (1);
+}
+
+int ft_is_map(char *line)
+{
+    int i;
+
+    i = 0;
+    while (line[i] && ft_is_space(line[i]))   
+        i++;
+    if (line[i] != '1' || line[i] == '0')
+        return (1);
+    return (0);
+}
+
 char    **ft_take_grid(t_list *lst)
 {
     char    **grid;
+    t_list  *tmp;
     int     i;
     int     count;
 
     count = 0;
-    while (lst)
+    tmp = lst;
+    while (tmp)
     {
-        if (ft_strchr(lst->line, '1'))
+        if (ft_start_with(tmp->line, "1") || ft_start_with(tmp->line, "0"))
             count++;
-        lst = lst->next;
+        tmp = tmp->next;
     }
     grid = (char **)malloc(sizeof(char *) * (count + 1));
     if (!grid)
         return (NULL);
     i = 0;
-    while (lst)
+    tmp = lst;
+    while (tmp)
     {
-        if (ft_strchr(lst->line, '1'))
+        if (ft_start_with(tmp->line, "1") || ft_start_with(tmp->line, "0"))
         {
-            grid[i] = ft_strdup(lst->line);
+            grid[i] = ft_strtrim(tmp->line, "\n");
             i++;
         }
-        lst = lst->next;
+        tmp = tmp->next;
     }
     grid[i] = NULL;
     return (grid);
@@ -185,6 +228,12 @@ t_map   *ft_init_map(t_list *lst)
     map = (t_map *)malloc(sizeof(t_map));
     if (!map)
         return (NULL);
+    map->path_n = NULL;
+    map->path_s = NULL;
+    map->path_w = NULL;
+    map->path_e = NULL;
+    map->floor_color = NULL;
+    map->ceillign_color = NULL;
     while (tmp != NULL)
     {
         if (ft_strncmp(tmp->line, "NO ", 3) == 0)

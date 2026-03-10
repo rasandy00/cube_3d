@@ -6,7 +6,7 @@
 /*   By: andriamr <andriamr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 20:47:03 by andriamr          #+#    #+#             */
-/*   Updated: 2025/03/19 15:01:01 by andriamr         ###   ########.fr       */
+/*   Updated: 2026/02/20 16:17:58 by andriamr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,3 @@ char	*ft_strdup(const char *s)
 	ft_strcpy(str, (char *)s);
 	return (str);
 }
-/*
-int main ()
-{
-	char *str;
-	str = ft_strdup("sandy");
-	printf("%s\n", str);
-	free (str);
-	return (0);
-}*/

@@ -6,7 +6,7 @@
 /*   By: andriamr <andriamr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/06 10:48:51 by andriamr          #+#    #+#             */
-/*   Updated: 2025/04/08 11:24:35 by andriamr         ###   ########.fr       */
+/*   Updated: 2026/02/20 16:17:50 by andriamr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,18 +72,3 @@ char	**ft_split(char const *s, char c)
 	}
 	return (dest);
 }
-/*#include <stdio.h>
-int		main(void)
-{
-	size_t i = 0;
-	char **tab;
-	char *str;
-	str = "    sandy          t\nt mlay elah       ";
-	tab = ft_split(str, '\n');
-	while (i < count_word(str, '\n'))
-	{
-		printf("string %ld : %s\n", i+1, tab[i]);
-		i++;
-	}
-	return (0);
-}*/

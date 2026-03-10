@@ -6,7 +6,7 @@
 /*   By: andriamr <andriamr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 12:41:19 by andriamr          #+#    #+#             */
-/*   Updated: 2025/04/08 15:44:21 by andriamr         ###   ########.fr       */
+/*   Updated: 2026/02/20 16:17:34 by andriamr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,14 +78,3 @@ char	*ft_itoa(int n)
 	}
 	return (dest);
 }
-/*#include <stdio.h>
-int main ()
-{
-	int i;
-	i = -0000015;
-	printf("%s\n",ft_itoa(i));
-	write(1, ft_itoa(i), count_number(i)+1);
-	write(1, "\n", 1);
-	free(ft_itoa(i));
-	return (0);
-}*/

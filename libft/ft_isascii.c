@@ -6,7 +6,7 @@
 /*   By: andriamr <andriamr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 13:47:07 by andriamr          #+#    #+#             */
-/*   Updated: 2025/03/13 18:16:37 by andriamr         ###   ########.fr       */
+/*   Updated: 2026/02/20 16:17:27 by andriamr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,3 @@ int	ft_isascii(int c)
 {
 	return ((c >= 0) && (c <= 127));
 }
-/*
-int main ()
-{
-	printf ("%d", ft_isascii(122));
-	return (0);
-}*/

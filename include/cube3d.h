@@ -6,7 +6,7 @@
 /*   By: andriamr <andriamr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/19 09:43:48 by codespace         #+#    #+#             */
-/*   Updated: 2026/02/20 08:21:23 by andriamr         ###   ########.fr       */
+/*   Updated: 2026/02/21 06:20:37 by andriamr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ typedef struct  s_list
 {
     char    *line;
     struct  s_list  *next;
+    struct  s_list  *prev;
 }   t_list;
 
 typedef struct s_img
@@ -84,6 +85,7 @@ typedef struct  s_game
 }   t_game;
 
 char	*get_next_line(int fd);
+t_map    *ft_parsing(char *path);
 
 
 #endif

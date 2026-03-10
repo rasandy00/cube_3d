@@ -6,7 +6,7 @@
 /*   By: andriamr <andriamr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 11:54:47 by andriamr          #+#    #+#             */
-/*   Updated: 2025/03/13 18:16:34 by andriamr         ###   ########.fr       */
+/*   Updated: 2026/02/20 16:17:31 by andriamr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,4 @@ int	ft_isalpha(int c)
 {
 	return ((c <= 'z' && c >= 'a') || ((c >= 'A') && (c <= 'Z')));
 }
-/*
-int	main()
-{
-	printf("%d", ft_isalpha('a'));
-	return (0);
-}*/
+

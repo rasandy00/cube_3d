@@ -6,7 +6,7 @@
 /*   By: andriamr <andriamr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 15:21:53 by andriamr          #+#    #+#             */
-/*   Updated: 2025/03/13 18:16:28 by andriamr         ###   ########.fr       */
+/*   Updated: 2026/02/20 16:18:47 by andriamr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,3 @@ int	ft_toupper(int c)
 		return (c - 32);
 	return (c);
 }
-/*
-int main ()
-{
-	printf ("%d", ft_toupper('s'));
-	return (0);
-}*/
