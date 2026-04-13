@@ -6,7 +6,7 @@
 /*   By: andriamr <andriamr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 08:01:53 by andriamr          #+#    #+#             */
-/*   Updated: 2026/04/13 17:58:10 by andriamr         ###   ########.fr       */
+/*   Updated: 2026/04/13 18:35:34 by andriamr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,18 +35,6 @@ static double	get_wall_x(t_game *game, t_ray *ray)
 		wall_x = game->player.x + ray->perp_wall_dist * ray->dir_x;
 	wall_x -= floor(wall_x);
 	return (wall_x);
-}
-
-int	get_tex_color(t_game *game, t_draw *d)
-{
-	char	*addr;
-	int		t_y;
-
-	t_y = (int)d->t_pos & (game->tex[d->t_idx].height - 1);
-	addr = game->tex[d->t_idx].addr;
-	addr += t_y * game->tex[d->t_idx].line_len;
-	addr += d->t_x * (game->tex[d->t_idx].bpp / 8);
-	return (*(int *)addr);
 }
 
 int	calc_tex_x(t_game *game, t_ray *ray, int t_idx)

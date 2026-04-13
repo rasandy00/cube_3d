@@ -6,7 +6,7 @@
 /*   By: andriamr <andriamr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 06:35:58 by andriamr          #+#    #+#             */
-/*   Updated: 2026/04/13 17:55:21 by andriamr         ###   ########.fr       */
+/*   Updated: 2026/04/13 18:35:15 by andriamr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -150,5 +150,7 @@ int		create_trgb(int t, int r, int g, int b);
 void	free_game(t_game *game);
 void	my_mlx_pixel_put(t_game *game, int x, int y, int color);
 void	ft_free_split(char **split);
+int		get_tex_color(t_game *game, t_draw *d);
+
 
 #endif
