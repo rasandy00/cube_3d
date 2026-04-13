@@ -6,13 +6,13 @@
 /*   By: andriamr <andriamr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 07:59:39 by andriamr          #+#    #+#             */
-/*   Updated: 2026/04/13 16:31:36 by andriamr         ###   ########.fr       */
+/*   Updated: 2026/04/13 16:54:53 by andriamr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-static int utils_trim_line(t_map *map, char *line, int i)
+static int	utils_trim_line(t_map *map, char *line, int i)
 {
 	map->grid[i] = ft_strtrim(line, "\n");
 	if (!map->grid[i])

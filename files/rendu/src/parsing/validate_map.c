@@ -6,7 +6,7 @@
 /*   By: andriamr <andriamr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 08:00:17 by andriamr          #+#    #+#             */
-/*   Updated: 2026/04/13 15:37:50 by andriamr         ###   ########.fr       */
+/*   Updated: 2026/04/13 16:51:40 by andriamr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static int	check_map_char(t_map *map)
 		while (map->grid[i][j])
 		{
 			if (!ft_strchr("01 NEWS", map->grid[i][j]))
-				return (print_error("Invalid character") , 1);
+				return (print_error("Invalid character"), 1);
 			j++;
 		}
 		i++;
