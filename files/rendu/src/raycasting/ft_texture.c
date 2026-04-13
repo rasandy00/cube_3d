@@ -6,7 +6,7 @@
 /*   By: andriamr <andriamr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 08:01:53 by andriamr          #+#    #+#             */
-/*   Updated: 2026/04/13 16:53:51 by andriamr         ###   ########.fr       */
+/*   Updated: 2026/04/13 17:58:10 by andriamr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,48 +37,60 @@ static double	get_wall_x(t_game *game, t_ray *ray)
 	return (wall_x);
 }
 
+int	get_tex_color(t_game *game, t_draw *d)
+{
+	char	*addr;
+	int		t_y;
+
+	t_y = (int)d->t_pos & (game->tex[d->t_idx].height - 1);
+	addr = game->tex[d->t_idx].addr;
+	addr += t_y * game->tex[d->t_idx].line_len;
+	addr += d->t_x * (game->tex[d->t_idx].bpp / 8);
+	return (*(int *)addr);
+}
+
+int	calc_tex_x(t_game *game, t_ray *ray, int t_idx)
+{
+	int		t_x;
+	double	wall_x;
+
+	wall_x = get_wall_x(game, ray);
+	t_x = (int)(wall_x * (double)game->tex[t_idx].width);
+	if (ray->side == 0 && ray->dir_x > 0)
+		return (game->tex[t_idx].width - t_x - 1);
+	if (ray->side == 1 && ray->dir_y < 0)
+		return (game->tex[t_idx].width - t_x - 1);
+	return (t_x);
+}
+
+void	init_draw(t_game *game, t_ray *ray, t_draw *d)
+{
+	d->line_h = (int)(SCREEN_HEIGHT / ray->perp_wall_dist);
+	d->start = -d->line_h / 2 + SCREEN_HEIGHT / 2;
+	if (d->start < 0)
+		d->start = 0;
+	d->end = d->line_h / 2 + SCREEN_HEIGHT / 2;
+	if (d->end >= SCREEN_HEIGHT)
+		d->end = SCREEN_HEIGHT - 1;
+	d->t_idx = get_tex_index(ray);
+	d->t_x = calc_tex_x(game, ray, d->t_idx);
+	d->step = (double)game->tex[d->t_idx].height / d->line_h;
+	d->t_pos = (d->start - SCREEN_HEIGHT / 2 + d->line_h / 2) * d->step;
+}
+
 void	draw_texture_line(t_game *game, t_ray *ray, int x)
 {
-	int		line_height;
-	int		draw_start;
-	int		draw_end;
-	int		tex_x;
-	int		tex_y;
-	int		tex_index;
-	double	wall_x;
-	double	step;
-	double	tex_pos;
+	t_draw	d;
 	int		y;
-	int		color;
 
-	line_height = (int)(SCREEN_HEIGHT / ray->perp_wall_dist);
-	draw_start = -line_height / 2 + SCREEN_HEIGHT / 2;
-	if (draw_start < 0)
-		draw_start = 0;
-	draw_end = line_height / 2 + SCREEN_HEIGHT / 2;
-	if (draw_end >= SCREEN_HEIGHT)
-		draw_end = SCREEN_HEIGHT - 1;
-	tex_index = get_tex_index(ray);
-	wall_x = get_wall_x(game, ray);
-	tex_x = (int)(wall_x * (double)game->tex[tex_index].width);
-	if (ray->side == 0 && ray->dir_x > 0)
-		tex_x = game->tex[tex_index].width - tex_x - 1;
-	if (ray->side == 1 && ray->dir_y < 0)
-		tex_x = game->tex[tex_index].width - tex_x - 1;
-	step = (double)game->tex[tex_index].height / line_height;
-	tex_pos = (draw_start - SCREEN_HEIGHT / 2 + line_height / 2) * step;
+	init_draw(game, ray, &d);
 	y = 0;
-	while (y < draw_start)
+	while (y < d.start)
 		my_mlx_pixel_put(game, x, y++, game->ceiling_color);
-	while (y < draw_end)
+	while (y < d.end)
 	{
-		tex_y = (int)tex_pos & (game->tex[tex_index].height - 1);
-		tex_pos += step;
-		color = *(int *)(game->tex[tex_index].addr + tex_y
-				* game->tex[tex_index].line_len + tex_x
-				* (game->tex[tex_index].bpp / 8));
-		my_mlx_pixel_put(game, x, y, color);
-		y++;
+		my_mlx_pixel_put(game, x, y++, get_tex_color(game, &d));
+		d.t_pos += d.step;
 	}
 	while (y < SCREEN_HEIGHT)
 		my_mlx_pixel_put(game, x, y++, game->floor_color);

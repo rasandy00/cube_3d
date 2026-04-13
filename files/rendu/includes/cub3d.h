@@ -6,7 +6,7 @@
 /*   By: andriamr <andriamr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 06:35:58 by andriamr          #+#    #+#             */
-/*   Updated: 2026/04/13 15:35:41 by andriamr         ###   ########.fr       */
+/*   Updated: 2026/04/13 17:55:21 by andriamr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,17 @@
 # define KEY_LEFT 65361
 # define KEY_RIGHT 65363
 # define KEY_ESC 65307
+
+typedef struct s_draw
+{
+	int		line_h;
+	int		start;
+	int		end;
+	int		t_idx;
+	int		t_x;
+	double	step;
+	double	t_pos;
+}	t_draw;
 
 typedef struct s_texture
 {

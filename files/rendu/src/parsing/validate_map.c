@@ -6,7 +6,7 @@
 /*   By: andriamr <andriamr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 08:00:17 by andriamr          #+#    #+#             */
-/*   Updated: 2026/04/13 16:51:40 by andriamr         ###   ########.fr       */
+/*   Updated: 2026/04/13 17:27:34 by andriamr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ static int	flood_fill(t_map *map, char **visited, int i, int j)
 		return (1);
 	if (visited[i][j] == '1' || map->grid[i][j] == '1')
 		return (0);
-	// if (map->grid[i][j] == ' ')
-	// 	return (1);
+	if (map->grid[i][j] == ' ')
+		return (1);
 	visited[i][j] = '1';
 	if (flood_fill(map, visited, i + 1, j) != 0)
 		return (1);
