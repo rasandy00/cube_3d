@@ -1,13 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   cub3d.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: andriamr <andriamr@student.42antananari    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/04/13 06:35:58 by andriamr          #+#    #+#             */
+/*   Updated: 2026/04/13 15:35:41 by andriamr         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef CUB3D_H
 # define CUB3D_H
 
 # include <stdio.h>
-# include <stdlib.h>
-# include <unistd.h>
 # include <fcntl.h>
 # include <math.h>
-# include "libft.h"
-# include "mlx.h"
+# include <libft.h>
+# include <mlx.h>
 
 # define SCREEN_WIDTH 1920
 # define SCREEN_HEIGHT 1080
@@ -94,37 +104,40 @@ typedef struct t_game
 	int			keys[65536];
 }	t_game;
 
-int		parse_file(char *filename, t_game *game);
+// parsing
+void	free_map(t_map *map);
+void	print_error(char *msg);
+int		load_textures(t_game *game);
+int		parse_file(char *str, t_game *game);
+int		parse_map(int fd, t_game *game);
 int		parse_config(int fd, t_game *game);
 int		parse_texture_path(char *line, t_game *game);
 int		parse_color_value(char *line, t_game *game);
-int		parse_map(int fd, t_game *game);
 int		validate_map(t_game *game);
-int		load_textures(t_game *game);
-void	free_map(t_map *map);
 
-int		raycast(t_game *game);
-void	perform_dda(t_game *game, t_ray *ray);
-void	draw_texture_line(t_game *game, t_ray *ray, int x);
-
+// player
+int		check_collision(t_game *game, double x, double y);
 void	move_player(t_game *game);
 void	rotate_player(t_game *game, double rot_speed);
-int		check_collision(t_game *game, double x, double y);
+//  render
 void	init_player_dir(t_game *game);
-
 void	render_frame(t_game *game);
-int		game_loop(t_game *game);
-void	init_game(t_game *game);
 int		key_press(int keycode, t_game *game);
 int		key_release(int keycode, t_game *game);
 int		close_window(t_game *game);
+int		game_loop(t_game *game);
+void	init_game(t_game *game);
+// raycasting
+void	perform_dda(t_game *game, t_ray *ray);
+int		raycast(t_game *game);
+void	draw_texture_line(t_game *game, t_ray *ray, int x);
 
-void	free_game(t_game *game);
-void	print_error(char *msg);
 
+
+// utils
 int		create_trgb(int t, int r, int g, int b);
+void	free_game(t_game *game);
 void	my_mlx_pixel_put(t_game *game, int x, int y, int color);
-
 void	ft_free_split(char **split);
 
 #endif

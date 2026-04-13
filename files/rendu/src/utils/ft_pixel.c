@@ -1,38 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_game.c                                        :+:      :+:    :+:   */
+/*   ft_pixel.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: andriamr <andriamr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/13 08:03:55 by andriamr          #+#    #+#             */
-/*   Updated: 2026/04/13 15:11:12 by andriamr         ###   ########.fr       */
+/*   Created: 2026/04/13 08:04:08 by andriamr          #+#    #+#             */
+/*   Updated: 2026/04/13 16:34:23 by andriamr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void	free_game(t_game *game)
+void	my_mlx_pixel_put(t_game *game, int x, int y, int color)
 {
-	int	i;
+	char	*dst;
 
-	i = 0;
-	while (i < 4)
-	{
-		if (game->tex[i].img)
-			mlx_destroy_image(game->mlx, game->tex[i].img);
-		if (game->tex_paths[i])
-			free(game->tex_paths[i]);
-		i++;
-	}
-	if (game->img)
-		mlx_destroy_image(game->mlx, game->img);
-	if (game->win)
-		mlx_destroy_window(game->mlx, game->win);
-	free_map(&game->map);
-	if (game->mlx)
-	{
-		mlx_destroy_display(game->mlx);
-		free(game->mlx);
-	}
+	dst = game->img_addr + (y * game->img_line_len + x * (game->img_bpp / 8));
+	*(unsigned int *)dst = color;
 }

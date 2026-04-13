@@ -1,38 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_game.c                                        :+:      :+:    :+:   */
+/*   ft_colors.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: andriamr <andriamr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/13 08:03:55 by andriamr          #+#    #+#             */
-/*   Updated: 2026/04/13 15:11:12 by andriamr         ###   ########.fr       */
+/*   Created: 2026/04/13 08:03:21 by andriamr          #+#    #+#             */
+/*   Updated: 2026/04/13 15:10:40 by andriamr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void	free_game(t_game *game)
+int	create_trgb(int t, int r, int g, int b)
 {
-	int	i;
-
-	i = 0;
-	while (i < 4)
-	{
-		if (game->tex[i].img)
-			mlx_destroy_image(game->mlx, game->tex[i].img);
-		if (game->tex_paths[i])
-			free(game->tex_paths[i]);
-		i++;
-	}
-	if (game->img)
-		mlx_destroy_image(game->mlx, game->img);
-	if (game->win)
-		mlx_destroy_window(game->mlx, game->win);
-	free_map(&game->map);
-	if (game->mlx)
-	{
-		mlx_destroy_display(game->mlx);
-		free(game->mlx);
-	}
+	return (t << 24 | r << 16 | g << 8 | b);
 }

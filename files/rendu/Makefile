@@ -18,17 +18,17 @@ SRC_PARSING = $(SRC_DIR)/parsing/parse_file.c \
 			  $(SRC_DIR)/parsing/parse_map.c \
 			  $(SRC_DIR)/parsing/validate_map.c \
 			  $(SRC_DIR)/parsing/free_map.c
-SRC_RAYCAST = $(SRC_DIR)/raycasting/raycast.c \
-			  $(SRC_DIR)/raycasting/texture.c
-SRC_PLAYER = $(SRC_DIR)/player/move.c \
-			 $(SRC_DIR)/player/rotate.c \
-			 $(SRC_DIR)/player/collision.c
-SRC_RENDER = $(SRC_DIR)/render/draw.c \
-			 $(SRC_DIR)/render/hooks.c \
-			 $(SRC_DIR)/render/game_loop.c
-SRC_UTILS = $(SRC_DIR)/utils/errors.c \
-			$(SRC_DIR)/utils/pixel.c \
-			$(SRC_DIR)/utils/colors.c \
+SRC_RAYCAST = $(SRC_DIR)/raycasting/ft_raycast.c \
+			  $(SRC_DIR)/raycasting/ft_texture.c
+SRC_PLAYER = $(SRC_DIR)/player/ft_move.c \
+			 $(SRC_DIR)/player/ft_rotate.c \
+			 $(SRC_DIR)/player/ft_colision.c
+SRC_RENDER = $(SRC_DIR)/render/ft_draw.c \
+			 $(SRC_DIR)/render/ft_game_hooks.c \
+			 $(SRC_DIR)/render/ft_game_loop.c
+SRC_UTILS = $(SRC_DIR)/utils/ft_errors.c \
+			$(SRC_DIR)/utils/ft_pixel.c \
+			$(SRC_DIR)/utils/ft_colors.c \
 			$(SRC_DIR)/utils/split_utils.c \
 			$(SRC_DIR)/utils/free_game.c
 SRC_MAIN = main.c

@@ -1,4 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: andriamr <andriamr@student.42antananari    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/04/13 06:52:49 by andriamr          #+#    #+#             */
+/*   Updated: 2026/04/13 15:17:50 by andriamr         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "cub3d.h"
+
+static void	utils_hook(t_game game)
+{
+	init_game(&game);
+	mlx_hook(game.win, 2, 1L << 0, key_press, &game);
+	mlx_hook(game.win, 3, 1L << 1, key_release, &game);
+	mlx_hook(game.win, 17, 0, close_window, &game);
+	mlx_loop_hook(game.mlx, game_loop, &game);
+}
 
 int	main(int argc, char **argv)
 {
@@ -22,11 +43,7 @@ int	main(int argc, char **argv)
 	game.img = mlx_new_image(game.mlx, SCREEN_WIDTH, SCREEN_HEIGHT);
 	game.img_addr = mlx_get_data_addr(game.img, &game.img_bpp,
 			&game.img_line_len, &game.img_endian);
-	init_game(&game);
-	mlx_hook(game.win, 2, 1L << 0, key_press, &game);
-	mlx_hook(game.win, 3, 1L << 1, key_release, &game);
-	mlx_hook(game.win, 17, 0, close_window, &game);
-	mlx_loop_hook(game.mlx, game_loop, &game);
+	utils_hook(game);
 	mlx_loop(game.mlx);
 	return (0);
 }
