@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_game_hooks.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: andriamr <andriamr@student.42antananari    +#+  +:+       +#+        */
+/*   By: nyrakoto <nyrakoto@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/13 08:02:56 by andriamr          #+#    #+#             */
-/*   Updated: 2026/04/13 15:05:38 by andriamr         ###   ########.fr       */
+/*   Created: 2026/04/21 12:02:25 by nyrakoto          #+#    #+#             */
+/*   Updated: 2026/05/31 08:15:12 by nyrakoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   free_game.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: andriamr <andriamr@student.42antananari    +#+  +:+       +#+        */
+/*   By: nyrakoto <nyrakoto@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/13 08:03:55 by andriamr          #+#    #+#             */
-/*   Updated: 2026/04/13 15:11:12 by andriamr         ###   ########.fr       */
+/*   Created: 2026/04/19 08:15:46 by nyrakoto          #+#    #+#             */
+/*   Updated: 2026/05/31 08:16:02 by nyrakoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

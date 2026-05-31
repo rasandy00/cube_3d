@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_raycast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: andriamr <andriamr@student.42antananari    +#+  +:+       +#+        */
+/*   By: nyrakoto <nyrakoto@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/13 08:01:41 by andriamr          #+#    #+#             */
-/*   Updated: 2026/04/13 15:16:36 by andriamr         ###   ########.fr       */
+/*   Created: 2026/04/13 08:01:41 by nyrakoto          #+#    #+#             */
+/*   Updated: 2026/05/31 08:16:36 by nyrakoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

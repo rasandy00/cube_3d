@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_texture.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: andriamr <andriamr@student.42antananari    +#+  +:+       +#+        */
+/*   By: nyrakoto <nyrakoto@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/13 08:01:53 by andriamr          #+#    #+#             */
-/*   Updated: 2026/04/13 18:35:34 by andriamr         ###   ########.fr       */
+/*   Created: 2026/04/11 10:10:44 by nyrakoto          #+#    #+#             */
+/*   Updated: 2026/05/31 08:14:38 by nyrakoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

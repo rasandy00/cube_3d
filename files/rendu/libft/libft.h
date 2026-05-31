@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nyrakoto <nyrakoto@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/13 13:30:35 by nyrakoto          #+#    #+#             */
-/*   Updated: 2025/06/26 17:01:19 by nyrakoto         ###   ########.fr       */
+/*   Created: 2026/05/31 08:20:16 by nyrakoto          #+#    #+#             */
+/*   Updated: 2026/05/31 08:21:45 by nyrakoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,6 @@ void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstdelone(t_list *lst, void (*del)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
- 
 char	*get_next_line(int fd);
 
 #endif
